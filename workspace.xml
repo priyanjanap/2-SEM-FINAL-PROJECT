@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="868f1b6f-8777-4621-b28b-ea82a682ac19" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="TypeScript File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/FrontEnd" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "priyanjanap"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/priyanjanap/2-SEM-FINAL-PROJECT.git",
+    "accountId": "918f030c-1fc0-41b5-8a92-be2caebbdff0"
+  }
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2tGqcBojdO9AMM2ZADQnQG01d2b" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven._BackEnd [clean,install].executor": "Run",
+    "Maven._BackEnd [clean].executor": "Run",
+    "Maven._BackEnd [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.BackEndApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PRIYANJANA/Desktop/Second Final Project",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.24712643",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example._backend.secureAndResponse.secure" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\BackEnd\src\main\java\org\example\_backend\service\impl" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\asset" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\assest" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\controller" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\model" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\model\Customer" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\css\Admin" />
+      <recent name="C:\Users\PRIYANJANA\Desktop\Second Final Project\FrontEnd\view\Admin" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn install" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="_BackEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._backend.BackEndApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="868f1b6f-8777-4621-b28b-ea82a682ac19" name="Changes" comment="" />
+      <created>1739988835665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739988835665</updated>
+      <workItem from="1739988836914" duration="6213000" />
+      <workItem from="1740300889084" duration="5447000" />
+      <workItem from="1740331535116" duration="4719000" />
+      <workItem from="1740713185018" duration="8000" />
+      <workItem from="1740716453814" duration="678000" />
+      <workItem from="1740717313050" duration="4000" />
+      <workItem from="1740717521615" duration="372000" />
+      <workItem from="1741664763700" duration="15000" />
+      <workItem from="1741671105178" duration="20499000" />
+      <workItem from="1741776865601" duration="2011000" />
+      <workItem from="1741791680120" duration="24599000" />
+      <workItem from="1741848912074" duration="24000" />
+      <workItem from="1741848992775" duration="169000" />
+      <workItem from="1741849442966" duration="37000" />
+      <workItem from="1741849498171" duration="1374000" />
+      <workItem from="1741937238958" duration="313000" />
+      <workItem from="1741938280640" duration="3070000" />
+      <workItem from="1741942887790" duration="8640000" />
+      <workItem from="1742031091219" duration="208000" />
+      <workItem from="1742049015499" duration="4510000" />
+      <workItem from="1742209711019" duration="2408000" />
+      <workItem from="1742212797217" duration="2036000" />
+      <workItem from="1742288882835" duration="15000" />
+      <workItem from="1742288933799" duration="10597000" />
+      <workItem from="1742358885703" duration="1408000" />
+      <workItem from="1742360629588" duration="5356000" />
+      <workItem from="1742366106338" duration="14966000" />
+      <workItem from="1742436569040" duration="6117000" />
+      <workItem from="1742450832135" duration="2794000" />
+      <workItem from="1742459184052" duration="274000" />
+      <workItem from="1742459542535" duration="3311000" />
+      <workItem from="1742547701103" duration="11978000" />
+      <workItem from="1742573528257" duration="1135000" />
+      <workItem from="1742620869277" duration="25000" />
+      <workItem from="1742620969137" duration="9000" />
+      <workItem from="1742667841869" duration="703000" />
+      <workItem from="1742668635059" duration="249000" />
+      <workItem from="1742668994723" duration="11869000" />
+      <workItem from="1742708550638" duration="2817000" />
+      <workItem from="1742805081922" duration="12246000" />
+      <workItem from="1742893099699" duration="2274000" />
+      <workItem from="1742901237764" duration="886000" />
+      <workItem from="1742903747639" duration="18192000" />
+      <workItem from="1743011475791" duration="22795000" />
+      <workItem from="1743156030924" duration="8422000" />
+      <workItem from="1743396454209" duration="735000" />
+      <workItem from="1743397348741" duration="2982000" />
+      <workItem from="1743443318354" duration="19979000" />
+      <workItem from="1743584416604" duration="5915000" />
+      <workItem from="1743669901086" duration="11488000" />
+      <workItem from="1743763334876" duration="7537000" />
+      <workItem from="1743996034031" duration="4216000" />
+      <workItem from="1744212988734" duration="5200000" />
+      <workItem from="1744473215536" duration="5043000" />
+      <workItem from="1744518402950" duration="2222000" />
+      <workItem from="1744780391993" duration="7317000" />
+      <workItem from="1744799252083" duration="10555000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BackEnd/src/main/java/org/example/_backend/util/ModelMapping.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
