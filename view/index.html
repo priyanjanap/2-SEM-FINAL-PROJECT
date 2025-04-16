@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>LoanMaster - Modern Loan Management System</title>
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/PopupModel1.css" rel="stylesheet">
+    <link href="../css/PopUpModel2.css" rel="stylesheet">
+    <style>
+
+
+        #modal-forgot-password {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            overflow: auto;
+            max-width: 400px;
+            transition: opacity 0.3s ease, visibility 0s 0.3s;
+        }
+        #modal-forgot-password.modal-content {
+            position: relative;
+            background-color: #fff;
+            margin: 8% auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 480px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+
+
+        #modal-forgot-password .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #modal-forgot-password .btn:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+
+                <img class="logo-icon" src="../asset/Logo.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="buttons">
+                <a class="btn btn-outline" href="#" id="loginBtn">Login</a>
+                <a class="btn btn-primary" href="#">Get Started</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+    <div class="modal" id="popupModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <div class="auth-container">
+                <div class="auth-sidebar">
+                    <div class="auth-sidebar-content">
+                        <div class="auth-logo">
+                            <span class="logo-icon">💰</span> NexoLend
+                        </div>
+                        <h2>Welcome to NexoLend</h2>
+                        <p>Streamline your loan management process with our comprehensive solution for financial
+                            institutions.</p>
+                        <div class="auth-testimonial">
+                            <div class="testimonial-content">
+                                "LoanMaster has transformed our workflow and reduced processing time by 65%. It's been a
+                                game-changer for our institution."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JD</div>
+                                <div class="author-details">
+                                    <h4>John Davis</h4>
+                                    <p>CEO, Community First Credit Union</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-forms">
+                    <div class="tab-toggle">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="signup">Sign Up</button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div class="tab-content active" id="login-tab">
+                        <h3 class="auth-heading">Login</h3>
+                        <p class="auth-subheading">Welcome back! Please Login to your account.</p>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label class="form-label" for="login-userName">Email</label>
+                                <input class="form-input" id="login-userName" placeholder="Enter your Email" required type="email">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="login-password">Password</label>
+                                <input class="form-input" id="login-password" placeholder="Enter your password"
+                                       required type="password">
+                            </div>
+
+
+                            <div class="remember-forgot">
+                                <div class="checkbox-group">
+                                    <input class="checkbox-input" id="remember-me" type="checkbox">
+                                    <label for="remember-me">Remember me</label>
+                                </div>
+                                <a class="forgot-password"  id="login-forgot-password">Forgot password?</a>
+                            </div>
+                            <button class="btn btn-primary" id="login-btn" type="submit">Login</button>
+                        </form>
+                    </div>
+
+
+
+                    <!-- Sign-Up Form -->
+                    <div class="tab-content" id="signup-tab">
+                        <h3 class="auth-heading">Sign Up</h3>
+                        <p class="auth-subheading">Create an account to get started with LoanMaster.</p>
+                        <form action="#" method="post">
+
+                            <div class="form-group">
+                                <label class="form-label" for="login-AccountType1">Account Type</label>
+                                <select class="form-input" id="login-AccountType1" onchange="toggleInputField()"
+                                        required>
+                                    <option disabled selected value="">Select Account Type</option>
+                                    <option value="CREDIT_CARD"> Credit card number</option>
+                                    <option value="DEBIT_CARD"> Debit card number</option>
+                                    <option value="CURRENT_ACCOUNT">Saving/ Current Account</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="creditCardField" style="display: none;">
+                                <label class="form-label" for="creditCardNumber">Credit Card Number</label>
+                                <input class="form-input" id="creditCardNumber" placeholder="Enter Credit Card Number"
+                                       type="text">
+                            </div>
+                            <div class="form-group" id="DebitCardField" style="display: none;">
+                                <label class="form-label" for="DebitCardNumber">Debit Card Number</label>
+                                <input class="form-input" id="DebitCardNumber" placeholder="Enter DebitCard Number"
+                                       type="text">
+                            </div>
+
+                            <div class="form-group" id="accountNumberField" style="display: none;">
+                                <label class="form-label" for="accountNumber">Account Number</label>
+                                <input class="form-input" id="accountNumber" placeholder="Enter Account Number"
+                                       type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="signup-NIC">National ID (NIC/SSN)</label>
+                                <input class="form-input" id="signup-NIC" placeholder="Enter your NIC/SSN" required
+                                       type="text">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="signup-fullname">Full Name</label>
+                                <input class="form-input" id="signup-fullname" placeholder="Enter your full name"
+                                       required type="text">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="signup-email">Email</label>
+                                <input class="form-input" id="signup-email" placeholder="place Enter Your Email"
+                                       required type="email">
+                            </div>
+                            <button class="btn btn-primary" id="signup-btn" type="submit">Verify Me</button>
+                            <button class="btn btn-secondary" type="reset">Close</button>
+
+                        </form>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--   verify Model-->
+    <div class="modal" id="verifyModalUniqueId">
+        <div class="modal-content">
+            <span class="close-btn" id="closeVerifyModalUniqueId">&times;</span>
+            <div class="auth-container">
+                <h3 class="auth-heading">Verification</h3>
+                <p class="auth-subheading">Please verify your details before proceeding.</p>
+
+                <div class="verification-code-container">
+                    <p>Your verification code is:</p>
+                    <div class="generated-code" id="generatedCode">123456</div>
+                    <p class="code-instruction">Please enter this code below to verify your account</p>
+                </div>
+
+                <form action="#" id="verifyForm" method="post">
+                    <div class="form-group">
+                        <label class="form-label" for="verification-code12">Enter Verification Code</label>
+                        <input class="form-input" id="verification-code12" maxlength="6"
+                               pattern="[0-9]{6}" placeholder="Enter the verification code" required type="text">
+                    </div>
+                    <div class="verification-message" id="verification-message12"></div>
+                    <button class="btn btn-primary" id="verify-submit-btn" type="submit">Verify</button>
+                    <button class="btn btn-secondary" id="closeVerifyModalUniqueIdButton" type="button">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+<!--                    forgot-password-->
+<div class="modal-content" id="modal-forgot-password">
+    <div class="forgot-password-container">
+        <h2>Forgot Your Password?</h2>
+        <button class="close-btn" id="close-forgot-password">&times;</button>
+        <div id="email-form">
+            <form id="forgot-password-form">
+                <div class="form-group">
+                    <label for="forgotPassword-email">Email Address:</label>
+                    <input class="form-control" id="forgotPassword-email" name="email" placeholder="Enter your email"
+                           required type="email">
+                </div>
+
+                <button class="btn btn-primary" id="send-code-btn-forgot-password" type="submit">
+                    Send Verification Code
+                </button>
+            </form>
+        </div>
+
+        <!-- Code input form (hidden initially) -->
+        <div id="code-form" style="display: none;">
+            <form id="verify-code-form">
+                <div class="form-group">
+                    <label for="verification-code">Verification Code:</label>
+                    <input class="form-control" id="verification-code" name="verification-code"
+                           placeholder="Enter the code sent to your email" required
+                           type="text">
+                </div>
+
+                <button class="btn btn-primary" id="verify-code-btn" type="submit">Verify Code
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Mobile Verification Modal -->
+<div class="modal12" id="mobileVerifyModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeMobileModal">&times;</span>
+        <div class="auth-container12">
+            <h3 class="auth-heading12">Phone Verification</h3>
+            <p class="auth-subheading12">Please enter your mobile number to receive a verification code.</p>
+
+            <form action="#" id="mobileForm" method="post">
+                <div class="form-group12">
+                    <label class="form-label12" for="mobile-number">Mobile Number</label>
+                    <div class="phone-input-container">
+
+                        <input class="form-input phone-input" id="mobile-number" placeholder="Enter your mobile number"
+                               required type="tel">
+                    </div>
+                </div>
+                <div class="verification-message" id="mobile-message"></div>
+                <button class="btn btn-primary" id="send-code-btn" type="submit">Send Verification Code</button>
+                <button class="btn btn-secondary" id="closeMobileBtn" type="button">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- OTP Verification Modal -->
+<div class="modal12" id="otpVerifyModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeOtpModal">&times;</span>
+        <div class="auth-container12">
+            <h3 class="auth-heading12">Verify OTP</h3>
+            <p class="auth-subheading12">Enter the verification code sent to <span id="displayMobile"></span></p>
+
+            <form action="#" id="otpForm" method="post">
+                <div class="otp-container">
+                    <input class="otp-input" id="otp1" maxlength="1" required type="text">
+                    <input class="otp-input" id="otp2" maxlength="1" required type="text">
+                    <input class="otp-input" id="otp3" maxlength="1" required type="text">
+                    <input class="otp-input" id="otp4" maxlength="1" required type="text">
+                </div>
+                <div class="verification-message" id="otp-message"></div>
+                <div class="resend-container">
+                    <span id="timer-text">Resend code in <span class="resend-timer" id="timer">60</span> seconds</span>
+                    <a class="resend-link" href="#" id="resend-link">Resend Code</a>
+                </div>
+                <button class="btn btn-primary" id="verify-otp-btn" type="submit">Verify OTP</button>
+                <button class="btn btn-secondary" id="back-to-mobile" type="button">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Username Password Modal -->
+<div class="modal12" id="userPassModal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeUserPassModal">&times;</span>
+        <div class="auth-container12">
+            <h3 class="auth-heading12">Create Account</h3>
+            <p class="auth-subheading12">Your phone number has been verified. Please create your account.</p>
+
+            <form action="#" id="userPassForm" method="post">
+                <div class="form-group12">
+                    <label class="form-label12" for="userEmail-SignupModal">Email</label>
+                    <input class="form-input" id="userEmail-SignupModal" placeholder="Enter Email" required type="Email">
+                </div>
+                <div class="form-group12">
+                    <label class="form-label12" for="userPassword-SignupModal">Password</label>
+                    <div class="password-container">
+                        <input class="form-input" id="userPassword-SignupModal" placeholder="Enter password" required type="password">
+                        <span class="password-toggle" id="passwordToggle">Show</span>
+                    </div>
+                </div>
+                <div class="form-group12">
+                    <label class="form-label12" for="userRole-SignupModal">User Role</label>
+                    <select class="form-input" id="userRole-SignupModal" required>
+                        <option value="CUSTOMER">CUSTOMER</option>
+                    </select>
+                </div>
+
+                <div class="verification-message" id="userpass-message"></div>
+                <button class="btn btn-primary" id="create-account-btn" type="submit">Create Account</button>
+                <button class="btn btn-secondary" id="closeCreateAccountBtn" type="button">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Simplify Your <span class="text-primary">Loan Management</span> Process</h1>
+                <p>LoanMaster helps financial institutions streamline loan origination, servicing, and collection with
+                    our all-in-one solution.</p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="#">Request Demo</a>
+                    <a class="btn btn-outline" href="#">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>500+</strong> Financial Institutions
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img alt="LoanMaster Dashboard" src="../asset/Dashboard1.webp"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-title">
+            <h2>Powerful <span class="text-primary">Features</span></h2>
+            <p>Our comprehensive loan management system offers everything you need to efficiently manage the entire loan
+                lifecycle.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Loan Origination</h3>
+                <p>Streamline application intake, credit checks, underwriting, and loan approval with customizable
+                    workflows.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Loan Servicing</h3>
+                <p>Automate payment processing, manage escrow accounts, and handle loan modifications with ease.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Get real-time insights into loan performance, portfolio health, and risk exposure with intuitive
+                    reports.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Automated Notifications</h3>
+                <p>Send payment reminders, late notices, and custom alerts to borrowers through multiple channels.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Access</h3>
+                <p>Access your loan portfolio on any device with our responsive web interface and mobile app.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Compliance Management</h3>
+                <p>Stay compliant with regulatory requirements with built-in compliance checks and audit trails.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works" id="how-it-works">
+    <div class="container">
+        <div class="section-title">
+            <h2>How <span class="text-primary">It Works</span></h2>
+            <p>Get started with LoanMaster in just a few simple steps and transform your loan management process.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Initial Setup</h3>
+                <p>Our team helps configure the system to match your specific loan products and workflows.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Data Migration</h3>
+                <p>We securely transfer your existing loan data into the LoanMaster platform.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Team Training</h3>
+                <p>Comprehensive training sessions ensure your team is comfortable with the system.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Go Live</h3>
+                <p>Launch the platform with ongoing support from our dedicated customer success team.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our <span class="text-primary">Clients Say</span></h2>
+            <p>Hear from financial institutions that have transformed their loan management process with LoanMaster.</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "LoanMaster has revolutionized how we manage our loan portfolio. The automated workflows have
+                        reduced our processing time by 65% and our team can focus on growing our business instead of
+                        paperwork."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-details">
+                            <h4>John Davis</h4>
+                            <p>CEO, Community First Credit Union</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <div class="slider-control active"></div>
+                <div class="slider-control"></div>
+                <div class="slider-control"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-title">
+            <h2>Simple <span class="text-primary">Pricing</span></h2>
+            <p>Choose the plan that fits your financial institution's needs and scale as you grow.</p>
+        </div>
+        <div class="pricing-plans">
+            <div class="pricing-plan">
+                <div class="plan-header">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">$499<span>/month</span></div>
+                    <div class="plan-description">Perfect for small credit unions and community banks</div>
+                </div>
+                <div class="plan-features">
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Up to 500 active loans
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Basic loan origination
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Core servicing features
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Email support
+                    </div>
+                </div>
+                <div class="plan-cta">
+                    <a class="btn btn-primary" href="#">Get Started</a>
+                </div>
+            </div>
+            <div class="pricing-plan featured">
+                <div class="featured-badge">Popular</div>
+                <div class="plan-header">
+                    <div class="plan-name">Professional</div>
+                    <div class="plan-price">$999<span>/month</span></div>
+                    <div class="plan-description">Ideal for mid-sized financial institutions</div>
+                </div>
+                <div class="plan-features">
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Up to 2,000 active loans
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Advanced origination workflows
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Full servicing capabilities
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Priority support
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Custom reporting
+                    </div>
+                </div>
+                <div class="plan-cta">
+                    <a class="btn btn-primary" href="#">Get Started</a>
+                </div>
+            </div>
+            <div class="pricing-plan">
+                <div class="plan-header">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-description">For large banks and lending institutions</div>
+                </div>
+                <div class="plan-features">
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Unlimited active loans
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Full platform access
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Custom integrations
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> Dedicated account manager
+                    </div>
+                    <div class="plan-feature">
+                        <span class="feature-check">✓</span> SLA guarantees
+                    </div>
+                </div>
+                <div class="plan-cta">
+                    <a class="btn btn-outline" href="#">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Transform Your Loan Management?</h2>
+        <p>Join hundreds of financial institutions that have simplified their loan processes, reduced operational costs,
+            and improved borrower satisfaction with LoanMaster.</p>
+        <div class="cta-buttons">
+            <a class="btn btn-cta" href="#">Request Demo</a>
+            <a class="btn btn-cta-outline" href="#">Contact Sales</a>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="logo">
+                    <span class="logo-icon">💰</span> LoanMaster
+                </div>
+                <p>Comprehensive loan management software for modern financial institutions.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Loan Origination</a></li>
+                    <li><a href="#">Loan Servicing</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Support Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="footer-contact">
+                    <a href="mailto:info@loanmaster.com">info@loanmaster.com</a>
+                    <a href="tel:+18005551234">+1 (800) 555-1234</a>
+                </div>
+                <div class="footer-social">
+                    <a class="social-icon" href="#">f</a>
+                    <a class="social-icon" href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<!-- jQuery (Required for Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Bootstrap JS (Ensure it's included after jQuery) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.4/dist/sweetalert2.all.min.js"></script>
+<script crossorigin="anonymous" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/script.js" type="module"></script>
+<script src="../js/login.js" type="module"></script>
+<script src="../js/user.js" type="module"></script>
+<script >
+
+    const closeForgotPasswordBtn = document.getElementById("close-forgot-password");
+    const forgotPasswordModal = document.getElementById("modal-forgot-password");
+
+
+    closeForgotPasswordBtn.addEventListener("click", () => {
+        forgotPasswordModal.style.display = "none";
+    });
+
+</script>
+
+</body>

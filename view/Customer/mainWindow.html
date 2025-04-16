@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Nexolend Loan Management Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="../../css/Customer/mainWindow.css" rel="stylesheet">
+    <link href="../../css/Customer/payment-section.css" rel="stylesheet">
+    <link href="../../css/logout.css" rel="stylesheet">
+    <link href="../../css/Customer/loan-section.css" rel="stylesheet">
+    <link href="../../css/Customer/profile-section.css" rel="stylesheet">
+    <link href="../../css/Customer/report-section.css" rel="stylesheet">
+    <link href="../../view/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fas fa-money-check-alt"></i>
+            <h2>LoanPro</h2>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li class="active">
+                    <a class="nav-link active" href="#dashboard-section"><i
+                            class="fas fa-home"></i><span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a class="nav-link active" href="#Loan-Section"><i class="fas fa-file-invoice-dollar"></i><span>Loans</span></a>
+                </li>
+                <li>
+                    <a class="nav-link active" href="#payment-section"><i
+                            class="fas fa-wallet"></i><span>Payments</span></a>l
+
+                </li>
+                <li>
+                    <a class="nav-link active" href="#document-section"><i
+                            class="fas fa-wallet"></i><span>Document</span></a>l
+
+                </li>
+                <li>
+                    <a class="nav-link active" href="#report-section"><i class="fas fa-chart-line"></i><span>Reports</span></a>
+                </li>
+                <li>
+                    <a class="nav-link active" href="#profile-section"><i class="fas fa-users"></i><span>Profile </span></a>
+                </li>
+                <li>
+                    <button class="log-out-trigger-btn" id="log-out-trigger-btn">
+                        <span class="log-out-icon-small"><svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                              stroke-linejoin="round" stroke-width="2"
+                                                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path
+                                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline
+                                points="16 17 21 12 16 7"></polyline><line x1="21" x2="9" y1="12" y2="12"></line></svg></span>
+                        Log Out
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <div class="avatar">
+                <img alt="User Avatar" src="/api/placeholder/64/64">
+            </div>
+            <div class="user-info">
+                <h4>John Smith</h4>
+                <p>Loan Manager</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="top-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input placeholder="Search loans, customers..." type="text">
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="btn-message">
+                    <i class="fas fa-envelope"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+                <button class="btn-add">
+                    <i class="fas fa-plus"></i>
+                    <span>New Loan</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <section class="content-section" id="dashboard-section">
+            <div class="dashboard-content">
+                <div class="welcome-bar">
+                    <h1>Loan Management Dashboard</h1>
+                    <p>Welcome back, John! Here's your loan overview for today.</p>
+                </div>
+
+                <!-- Overview Cards -->
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Outstanding Balance</h3>
+                            <h2>$125,650.00</h2>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 2.5% since last month</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon green">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Next Payment Due</h3>
+                            <h2>$2,450.00</h2>
+                            <p>Due on April 15, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Active Loans</h3>
+                            <h2>8</h2>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 1 new this month</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Payments This Month</h3>
+                            <h2>50</h2>
+                            <p class="trend positive"><i class="fas fa-arrow-up"></i> 8 new payments this month</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="charts-tables">
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h3>Loan Repayment History</h3>
+                            <div class="card-actions">
+                                <button class="btn-outline btn-sm">This Year</button>
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="repaymentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Payments -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Upcoming Payments</h3>
+                            <button class="btn-outline btn-sm">View All</button>
+                        </div>
+                        <div class="card-body">
+                            <ul class="payment-list">
+                                <li class="payment-item">
+                                    <div class="payment-info">
+                                        <h4>Home Mortgage #12458</h4>
+                                        <p>Due on April 15, 2025</p>
+                                    </div>
+                                    <div class="payment-amount">
+                                        <h4>$1,850.00</h4>
+                                        <button class="btn-primary btn-sm">Pay Now</button>
+                                    </div>
+                                </li>
+                                <li class="payment-item">
+                                    <div class="payment-info">
+                                        <h4>Auto Loan #45897</h4>
+                                        <p>Due on April 22, 2025</p>
+                                    </div>
+                                    <div class="payment-amount">
+                                        <h4>$425.00</h4>
+                                        <button class="btn-primary btn-sm">Pay Now</button>
+                                    </div>
+                                </li>
+                                <li class="payment-item">
+                                    <div class="payment-info">
+                                        <h4>Personal Loan #78562</h4>
+                                        <p>Due on April 30, 2025</p>
+                                    </div>
+                                    <div class="payment-amount">
+                                        <h4>$175.00</h4>
+                                        <button class="btn-primary btn-sm">Pay Now</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Details Table -->
+                <div class="card loans-table-card">
+                    <div class="card-header">
+                        <h3>Active Loans</h3>
+                        <div class="card-actions">
+                            <div class="filter-dropdown">
+                                <button class="btn-outline btn-sm">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                            <button class="btn-primary btn-sm">
+                                <i class="fas fa-plus"></i> Add New
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="loans-table">
+                                <thead>
+                                <tr>
+                                    <th>Loan ID</th>
+                                    <th>Customer</th>
+                                    <th>Loan Type</th>
+                                    <th>Start Date</th>
+                                    <th>Amount</th>
+                                    <th>Progress</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-pagination">
+                            <div class="showing-entries">
+                                Showing 1 to 5 of 8 entries
+                            </div>
+                            <div class="pagination-controls">
+                                <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                                <button class="pagination-btn active">1</button>
+                                <button class="pagination-btn">2</button>
+                                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--        Payment Content-->
+        <section class="content-section" id="payment-section">
+            <h2>Payments</h2>
+            <button class="payment-btn" id="open-payment-modal-btn">Make Payment</button>
+            <div class="payment-section-overview-cards">
+                <!-- Overview Cards -->
+                <div class="overview-cards">
+                    <div class="card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Payment Progress</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 60%"></div> <!-- Dynamic progress width -->
+                            </div>
+                            <p>60% of loan paid off</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-icon green">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Upcoming Payment Reminder</h3>
+                            <h2>$500</h2>
+                            <p>Due in 5 days on March 30, 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Payment Frequency</h3>
+                            <h2>Monthly Payments</h2>
+                            <p>Last Payment: $500 on March 20, 2025</p>
+                            <p><a href="#">View full history</a></p>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Available Payment Methods</h3>
+                            <ul>
+                                <li>Credit Card</li>
+                                <li>Bank Transfer</li>
+                                <li>PayPal</li>
+                                <li>Direct Debit</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <table id="payments-table">
+                <thead>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Amount</th>
+                    <th>Amount paid</th>
+                    <th>Due Payment</th>
+                    <th> Total Amount</th>
+                    <th> Payment Type</th>
+                    <th>Payment Date</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+        <!-- Loan Section -->
+        <section class="content-section" id="Loan-Section">
+            <div class="container">
+                <h2>Loan Details</h2>
+                <button class="payment-btn" id="Loan-Section-add-loan-btn">+ Add Loan</button>
+                <div class="table-responsive">
+                    <table id="Loan-Section-payments-table">
+                        <thead>
+                        <tr>
+                            <th>Loan ID</th>
+                            <th>Loan Type</th>
+                            <th>Amount</th>
+                            <th>Premium</th>
+                            <th>Premium Amount</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>L-001</td>
+                            <td>Home Loan</td>
+                            <td>$50,000</td>
+                            <td>12</td>
+                            <td>$4,200</td>
+                            <td>2024-01-01</td>
+                            <td>2025-01-01</td>
+                            <td>
+                                <button class="Loan-Section-edit-btn">Edit</button>
+                                <button class="Loan-Section-delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section HTML -->
+        <section class="content-section" id="profile-section">
+            <!-- Profile Image -->
+            <div class="profile-image-container">
+                <div class="profile-image" id="profileImage">
+                    <div class="profile-image-placeholder">
+                        <i>👤</i>
+                    </div>
+                </div>
+                <label class="upload-btn" for="uploadImage">
+                    <span>+</span>
+                    <input accept="image/*" class="upload-input" id="uploadImage" type="file">
+                </label>
+            </div>
+
+            <!-- User Information -->
+            <div class="info-container">
+                <div class="info-group">
+                    <div class="info-label">User ID</div>
+                    <div class="info-value" id="userId">USR12345</div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-label">Email</div>
+                    <div class="info-value" id="userEmail">johndoe@example.com</div>
+                    <button class="edit-btn" id="editEmailBtn">
+                        Edit Email
+                    </button>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-label">Password</div>
+                    <div class="info-value" id="userPassword">••••••••</div>
+                    <button class="edit-btn" id="editPasswordBtn">
+                        Change Password
+                    </button>
+                </div>
+
+                <!-- Banking Information -->
+                <div class="info-group">
+                    <div class="info-label">Account Number</div>
+                    <div class="info-value" id="accountNumber">9876543210</div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-label">Account Type</div>
+                    <div class="info-value" id="accountType">Savings</div>
+                </div>
+
+                <div class="info-group">
+                    <div class="info-label">Full Name</div>
+                    <div class="info-value" id="fullName">John Doe</div>
+                </div>
+            </div>
+        </section>
+        <section id="document-section" class="content-section">
+            <div class="form-container">
+                <h1>Loan Application Form</h1>
+
+                <div id="form-content">
+                    <!-- Form sections will be loaded here -->
+                </div>
+
+                <div class="button-container">
+                    <button id="prev-btn" class="btn btn-secondary" style="display: none;">Previous</button>
+                    <button id="next-btn" class="btn btn-primary">Next</button>
+                    <button id="submit-btn" class="btn btn-success" style="display: none;">Submit</button>
+                    <button id="cancel-btn" class="btn btn-danger">Cancel</button>
+                </div>
+
+                <div class="progress-indicator">
+                    <span id="current-step">1</span> of <span id="total-steps">6</span>
+                </div>
+            </div>
+        </section>
+        <!-- Main report container -->
+        <div id="report-section" class="content-section">
+            <!-- Report Header -->
+            <div class="report-header">
+                <div class="header-title">
+                    <h1 class="report-title">Performance Analytics</h1>
+                    <p class="report-subtitle">Reporting period: <span id="report-period">Last 30 days</span></p>
+                </div>
+                <div class="report-actions">
+                    <button class="report-btn report-btn-export">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export
+                    </button>
+                    <button class="report-btn report-btn-primary" id="refresh-data">Refresh Data</button>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-header" id="filter-toggle">
+                    <h2 class="filter-title">Filters</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="filter-icon">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="filter-form collapsed" id="filter-form">
+                    <div class="form-group">
+                        <label for="date-range">Date Range</label>
+                        <select class="form-control" id="date-range">
+                            <option>Last 7 days</option>
+                            <option selected>Last 30 days</option>
+                            <option>Last 90 days</option>
+                            <option>Custom range</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select class="form-control" id="department">
+                            <option>All Departments</option>
+                            <option>Sales</option>
+                            <option>Marketing</option>
+                            <option>Customer Support</option>
+                            <option>Development</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project</label>
+                        <select class="form-control" id="project">
+                            <option>All Projects</option>
+                            <option>Website Redesign</option>
+                            <option>Mobile App</option>
+                            <option>CRM Integration</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status">
+                            <option>All Statuses</option>
+                            <option>Completed</option>
+                            <option>In Progress</option>
+                            <option>At Risk</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="report-btn" id="reset-filters">Reset</button>
+                        <button class="report-btn report-btn-primary" id="apply-filters">Apply</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="card-header">
+                        <span>Total Revenue</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <div class="card-value" id="total-revenue">$256,890</div>
+                    <div class="card-trend trend-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                        <span id="revenue-trend">12.3% vs previous period</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-header">
+                        <span>Active Users</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="card-value" id="active-users">24,682</div>
+                    <div class="card-trend trend-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                        <span id="users-trend">8.7% vs previous period</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-header">
+                        <span>Conversion Rate</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="card-value" id="conversion-rate">5.82%</div>
+                    <div class="card-trend trend-down">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                        <span id="conversion-trend">2.1% vs previous period</span>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-header">
+                        <span>Support Tickets</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="card-value" id="support-tickets">345</div>
+                    <div class="card-trend trend-neutral">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span id="tickets-trend">0.3% vs previous period</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-container">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Revenue Trends</h3>
+                        <div class="chart-actions">
+                            <select class="form-control" id="revenue-time-period">
+                                <option>Monthly</option>
+                                <option>Weekly</option>
+                                <option>Daily</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="revenue-chart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">User Distribution</h3>
+                        <div class="chart-actions">
+                            <select class="form-control" id="distribution-type">
+                                <option>By Region</option>
+                                <option>By Device</option>
+                                <option>By Age</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="distribution-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3 class="chart-title">Recent Transactions</h3>
+                    <div class="chart-actions">
+                        <button class="report-btn" id="filter-transactions">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                            </svg>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table" id="transactions-table">
+                        <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>TRX-2023-001</td>
+                            <td>John Smith</td>
+                            <td>Apr 01, 2025</td>
+                            <td>$1,250.00</td>
+                            <td><span class="status status-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX-2023-002</td>
+                            <td>Lisa Johnson</td>
+                            <td>Mar 30, 2025</td>
+                            <td>$985.50</td>
+                            <td><span class="status status-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX-2023-003</td>
+                            <td>Michael Brown</td>
+                            <td>Mar 29, 2025</td>
+                            <td>$2,530.00</td>
+                            <td><span class="status status-warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX-2023-004</td>
+                            <td>Susan Wilson</td>
+                            <td>Mar 28, 2025</td>
+                            <td>$750.00</td>
+                            <td><span class="status status-success">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX-2023-005</td>
+                            <td>David Miller</td>
+                            <td>Mar 28, 2025</td>
+                            <td>$1,820.75</td>
+                            <td><span class="status status-danger">Failed</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <div class="page-info">Showing 1 to 5 of 56 entries</div>
+                    <div class="page-buttons">
+                        <button class="page-btn" disabled>Previous</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">...</button>
+                        <button class="page-btn">12</button>
+                        <button class="page-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Loan Popup Modal -->
+        <div class="modal" id="Loan-Section-loan-modal">
+            <div class="modal-content">
+                <span class="Loan-Section-close-btn">&times;</span>
+                <h2>Add Loan</h2>
+                <form id="Loan-Section-loan-form">
+                    <div class="form-group">
+                        <label>Interest Rate</label>
+                        <span id="Loan-Section-interest-rate">0%</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>One Month Interest Amount</label>
+                        <input id="Loan-Section-monthly-interest-rate" readonly type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Type</label>
+                        <select id="Loan-Section-loan-type" required>
+                            <option value="">Select Loan Type</option>
+                            <option data-interest="5" value="Home Loan">Home Loan (5%)</option>
+                            <option data-interest="7" value="Car Loan">Car Loan (7%)</option>
+                            <option data-interest="10" value="Personal Loan">Personal Loan (10%)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Amount</label>
+                        <input id="Loan-Section-loan-amount" required type="number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Premium (Years)</label>
+                        <select id="Loan-Section-premium" required>
+                            <option value="">Select Years</option>
+                            <option value="1">1 Year</option>
+                            <option value="2">2 Years</option>
+                            <option value="3">3 Years</option>
+                            <option value="5">5 Years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Premium Amount (Monthly)</label>
+                        <input id="Loan-Section-premium-amount" readonly required type="number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input id="Loan-Section-start-date" required type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input id="Loan-Section-end-date" required type="date">
+                    </div>
+                    <button class="Loan-Section-submit-btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div class="modal" id="payment-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-payment-modal">&times;</span>
+                <h2>Make a Payment</h2>
+                <form id="payment-form">
+
+                    <div class="form-group">
+                        <label for="payment-loan-id">Loan ID</label>
+                        <select id="payment-loan-id" name="payment-loan-id" required>
+                            <option disabled selected value="">Select Loan ID</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payment-amount">Amount:</label>
+                        <input id="payment-amount" min="0" name="payment-amount" required step="0.01" type="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-type">Payment Type:</label>
+                        <select id="payment-type" name="payment-type">
+                            <option value="credit-card">Credit Card</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-amount">Date</label>
+                        <input id="payment-date" min="0" name="payment-amount" required step="0.01" type="date">
+                    </div>
+                    <button class="submit-btn" id="payment-Popup-submit-ID" type="submit">Submit Payment</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- log out modal-->
+        <div class="log-out-modal" id="log-out-modal">
+            <div class="log-out-modal-content">
+                <div class="log-out-modal-header">
+                    <h3>Log Out</h3>
+                    <button aria-label="Close" class="log-out-close-btn" id="log-out-close-btn">&times;</button>
+                </div>
+                <div class="log-out-modal-body">
+                    <div class="log-out-icon">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                             stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" x2="9" y1="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <p>Are you sure you want to log out?</p>
+                    <p class="log-out-modal-subtext">You'll need to sign in again to access your account.</p>
+                </div>
+                <div class="log-out-modal-footer">
+                    <button class="log-out-cancel-btn" id="log-out-cancel-btn">Cancel</button>
+                    <button class="log-out-confirm-btn" id="log-out-confirm-btn">Log Out</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Modal -->
+        <div class="modal-overlay" id="emailModal">
+            <div class="modal-modal-overplay">
+                <div class="modal-header">
+                    <h3 class="modal-title">Change Email Address</h3>
+                    <button class="close-btn" id="closeEmailModal">&times;</button>
+                </div>
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label class="form-label">Current Email</label>
+                        <input class="form-input" id="currentEmail" readonly type="email" value="johndoe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">New Email</label>
+                        <input class="form-input" id="newEmail" required type="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm New Email</label>
+                        <input class="form-input" id="confirmEmail" required type="email">
+                    </div>
+                    <button class="submit-btn" type="submit">Update Email</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Password Modal -->
+        <div class="modal-overlay" id="passwordModal">
+            <div class="modal-modal-overplay">
+                <div class="modal-header">
+                    <h3 class="modal-title">Change Password</h3>
+                    <button class="close-btn" id="closePasswordModal">&times;</button>
+                </div>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label class="form-label">Current Password</label>
+                        <div class="password-input-wrapper">
+                            <input class="form-input" id="currentPassword" required type="password">
+                            <span class="eye-icon" id="toggleCurrentPassword">👁️</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">New Password</label>
+                        <div class="password-input-wrapper">
+                            <input class="form-input" id="newPassword" required type="password">
+                            <span class="eye-icon" id="toggleNewPassword">👁️</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm New Password</label>
+                        <div class="password-input-wrapper">
+                            <input class="form-input" id="confirmPassword" required type="password">
+                            <span class="eye-icon" id="toggleConfirmPassword">👁️</span>
+                        </div>
+                    </div>
+                    <button class="submit-btn" type="submit">Update Password</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="../../js/jquery-3.7.1.min.js"></script>
+<script src="../../view/script.js"></script>
+<script src="../../js/customer/customerPayment.js" type="module"></script>
+<script src="../../js/customer/mainWindow.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const defaultSection = document.getElementById('dashboard-section');
+        if (defaultSection) {
+            defaultSection.style.display = 'block';
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                document.getElementById(targetId).style.display = 'block';
+
+                document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+
+                this.classList.add('active');
+            });
+        });
+    });
+    const loanData = [
+        {id: "LN1001", name: "Home Loan"},
+        {id: "LN1002", name: "Car Loan"},
+        {id: "LN1003", name: "Education Loan"}
+    ];
+
+    function populateLoanDropdown() {
+        const loanSelect = document.getElementById('payment-loan-id');
+        loanData.forEach(loan => {
+            const option = document.createElement('option');
+            option.value = loan.id;
+            option.textContent = `${loan.id} - ${loan.name}`;
+            loanSelect.appendChild(option);
+        });
+    }
+
+    populateLoanDropdown();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let today = new Date().toISOString().split('T')[0];
+        document.getElementById("payment-date").value = today;
+    });
+    // Loan Poup
+    document.getElementById("Loan-Section-add-loan-btn").addEventListener("click", function () {
+        document.getElementById("Loan-Section").style.display = "block";
+        document.getElementById("Loan-Section-loan-modal").style.display = "flex";
+    });
+    document.querySelector(".Loan-Section-close-btn").addEventListener("click", function () {
+        document.getElementById("Loan-Section-loan-modal").style.display = "none";
+    });
+    document.getElementById("Loan-Section-loan-type").addEventListener("change", updateInterestRate);
+    document.getElementById("Loan-Section-loan-amount").addEventListener("input", calculateLoan);
+    document.getElementById("Loan-Section-premium").addEventListener("change", calculateLoan);
+
+    function updateInterestRate() {
+        const loanType = document.getElementById("Loan-Section-loan-type");
+        const selectedOption = loanType.options[loanType.selectedIndex];
+        const interestRate = selectedOption.getAttribute("data-interest") || 0;
+        document.getElementById("Loan-Section-interest-rate").innerText = interestRate + "%";
+
+        calculateLoan();
+    }
+
+    function calculateLoan() {
+        const loanAmount = parseFloat(document.getElementById("Loan-Section-loan-amount").value) || 0;
+        const premiumYears = parseInt(document.getElementById("Loan-Section-premium").value) || 0;
+        const interestRate = parseFloat(document.getElementById("Loan-Section-interest-rate").innerText) || 0;
+
+        if (loanAmount > 0 && premiumYears > 0) {
+            const months = premiumYears * 12; // Convert years to months
+            const basePremium = loanAmount / months; // Monthly installment without interest
+            const monthlyInterest = (basePremium * interestRate) / 100; // Monthly interest amount
+            const totalMonthlyPayment = basePremium + monthlyInterest; // Total monthly amount
+
+            document.getElementById("Loan-Section-premium-amount").value = totalMonthlyPayment.toFixed(2);
+            document.getElementById("Loan-Section-monthly-interest-rate").value = monthlyInterest.toFixed(2);
+        }
+    }
+
+
+    //log out
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const modal = document.getElementById('log-out-modal');
+        const triggerBtn = document.getElementById('log-out-trigger-btn');
+        const closeBtn = document.getElementById('log-out-close-btn');
+        const cancelBtn = document.getElementById('log-out-cancel-btn');
+        const confirmBtn = document.getElementById('log-out-confirm-btn');
+
+        // Function to open modal
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners
+        triggerBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Close modal if user clicks outside content
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Handle logout confirmation
+        confirmBtn.addEventListener('click', function () {
+            // Add your logout logic here
+            console.log('User logged out');
+
+            // Simulate logout action
+            setTimeout(() => {
+                closeModal();
+                // Redirect to login page or perform other logout actions
+                // window.location.href = '/login';
+            }, 500);
+        });
+
+        // Allow Escape key to close modal
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    });
+
+    //     Profile section for JS
+    // Profile Section JavaScript
+    document.addEventListener('DOMContentLoaded', function () {
+        // Profile Image Upload
+        const profileImage = document.getElementById('profileImage');
+        const uploadInput = document.getElementById('uploadImage');
+
+        uploadInput.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profileImage.innerHTML = `<img src="${e.target.result}" alt="Profile" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+
+
+        //  Modal Handling for Email and Password
+        const emailModal = document.getElementById('emailModal');
+        const passwordModal = document.getElementById('passwordModal');
+        const editEmailBtn = document.getElementById('editEmailBtn');
+        const editPasswordBtn = document.getElementById('editPasswordBtn');
+        const closeEmailModal = document.getElementById('closeEmailModal');
+        const closePasswordModal = document.getElementById('closePasswordModal');
+
+        // Open modals
+        editEmailBtn.addEventListener('click', () => {
+            emailModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+        });
+
+        editPasswordBtn.addEventListener('click', () => {
+            passwordModal.classList.add('active');
+        });
+
+        closeEmailModal.addEventListener('click', () => {
+            emailModal.classList.remove('active');
+        });
+
+        closePasswordModal.addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === emailModal) {
+                emailModal.classList.remove('active');
+            }
+            if (e.target === passwordModal) {
+                passwordModal.classList.remove('active');
+            }
+        });
+
+        const emailForm = document.getElementById('emailForm');
+        const passwordForm = document.getElementById('passwordForm');
+
+        emailForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const newEmail = document.getElementById('newEmail').value;
+            const confirmEmail = document.getElementById('confirmEmail').value;
+
+            if (newEmail !== confirmEmail) {
+                alert('Emails do not match!');
+                return;
+            }
+
+            document.getElementById('userEmail').textContent = newEmail;
+            document.getElementById('currentEmail').value = newEmail;
+
+            emailForm.reset();
+            emailModal.classList.remove('active');
+
+            alert('Email updated successfully!');
+        });
+
+        passwordForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+
+            passwordForm.reset();
+            passwordModal.classList.remove('active');
+
+            alert('Password updated successfully!');
+        });
+
+        document.getElementById('toggleCurrentPassword').addEventListener('click', function () {
+            togglePasswordVisibility('currentPassword');
+        });
+
+        document.getElementById('toggleNewPassword').addEventListener('click', function () {
+            togglePasswordVisibility('newPassword');
+        });
+
+        document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+            togglePasswordVisibility('confirmPassword');
+        });
+
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
+            }
+        }
+    });
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterToggle = document.getElementById('filter-toggle');
+        const filterForm = document.getElementById('filter-form');
+        const filterIcon = document.querySelector('.filter-icon');
+
+        filterToggle.addEventListener('click', function() {
+            if (filterForm.classList.contains('collapsed')) {
+                filterForm.classList.remove('collapsed');
+                filterForm.classList.add('expanded');
+                filterIcon.style.transform = 'rotate(180deg)';
+            } else {
+                filterForm.classList.remove('expanded');
+                filterForm.classList.add('collapsed');
+                filterIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // ---- Reset Filters Button ----
+        const resetFiltersBtn = document.getElementById('reset-filters');
+        resetFiltersBtn.addEventListener('click', function() {
+            document.getElementById('date-range').selectedIndex = 1; // "Last 30 days"
+            document.getElementById('department').selectedIndex = 0;
+            document.getElementById('project').selectedIndex = 0;
+            document.getElementById('status').selectedIndex = 0;
+        });
+
+        // ---- Apply Filters Button ----
+        const applyFiltersBtn = document.getElementById('apply-filters');
+        applyFiltersBtn.addEventListener('click', function() {
+            // Simulate filter application with loading indicator
+            applyFiltersBtn.innerHTML = '<span class="loading-spinner"></span> Applying...';
+            applyFiltersBtn.disabled = true;
+
+            // Simulate API call with timeout
+            setTimeout(function() {
+                updateCharts();
+                updateSummaryData();
+                applyFiltersBtn.innerHTML = 'Apply';
+                applyFiltersBtn.disabled = false;
+
+                // Update reporting period based on selected date range
+                const dateRange = document.getElementById('date-range');
+                document.getElementById('report-period').textContent = dateRange.options[dateRange.selectedIndex].text;
+
+                // Auto-collapse the filter form after applying
+                filterForm.classList.remove('expanded');
+                filterForm.classList.add('collapsed');
+                filterIcon.style.transform = 'rotate(0deg)';
+            }, 1000);
+        });
+
+        // ---- Refresh Data Button ----
+        const refreshDataBtn = document.getElementById('refresh-data');
+        refreshDataBtn.addEventListener('click', function() {
+            refreshDataBtn.innerHTML = '<span class="loading-spinner"></span> Refreshing...';
+            refreshDataBtn.disabled = true;
+
+            // Simulate API call with timeout
+            setTimeout(function() {
+                updateCharts();
+                updateSummaryData();
+                refreshDataBtn.innerHTML = 'Refresh Data';
+                refreshDataBtn.disabled = false;
+            }, 1200);
+        });
+
+        // ---- Export Button ----
+        const exportBtn = document.querySelector('.report-btn-export');
+        exportBtn.addEventListener('click', function() {
+            const options = ['PDF', 'Excel', 'CSV'];
+            const selectedFormat = window.prompt('Select export format: ' + options.join(', '), 'PDF');
+
+            if (selectedFormat && options.includes(selectedFormat)) {
+                alert(`Exporting report in ${selectedFormat} format...`);
+                // In a real implementation, this would trigger the export functionality
+            }
+        });
+
+        // ---- Pagination Buttons ----
+        const pageButtons = document.querySelectorAll('.page-btn:not([disabled])');
+        pageButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                pageButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Simulate page change
+                simulateTableDataChange();
+            });
+        });
+
+        // ---- Filter Transactions Button ----
+        const filterTransactionsBtn = document.getElementById('filter-transactions');
+        filterTransactionsBtn.addEventListener('click', function() {
+            alert('Transaction filtering would be implemented here!');
+        });
+
+        // ---- Chart Period Selectors ----
+        const revenueTimePeriod = document.getElementById('revenue-time-period');
+        revenueTimePeriod.addEventListener('change', function() {
+            updateRevenueChart(this.value);
+        });
+
+        const distributionType = document.getElementById('distribution-type');
+        distributionType.addEventListener('change', function() {
+            updateDistributionChart(this.value);
+        });
+
+        // ---- Initialize Charts ----
+        // This assumes Chart.js is loaded
+        if (typeof Chart !== 'undefined') {
+            initializeCharts();
+        } else {
+            // Load Chart.js dynamically if not available
+            loadChartJs().then(initializeCharts);
+        }
+
+        // ---- Helper Functions ----
+
+        // Function to dynamically load Chart.js
+        function loadChartJs() {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js';
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+
+        // Initialize both charts
+        function initializeCharts() {
+            initRevenueChart();
+            initDistributionChart();
+        }
+
+        let revenueChart, distributionChart;
+
+        // Initialize Revenue Chart
+        function initRevenueChart() {
+            const ctx = document.getElementById('revenue-chart').getContext('2d');
+
+            revenueChart = new Chart(ctx, {
+                type: 'line',
+                data: getRevenueData('monthly'),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize Distribution Chart
+        function initDistributionChart() {
+            const ctx = document.getElementById('distribution-chart').getContext('2d');
+
+            distributionChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: getDistributionData('department'),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    return `${label}: $${value.toLocaleString()} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        // Update both charts when filters are applied
+        function updateCharts() {
+            updateRevenueChart(document.getElementById('revenue-time-period').value);
+            updateDistributionChart(document.getElementById('distribution-type').value);
+        }
+
+        // Update Revenue Chart based on selected time period
+        function updateRevenueChart(period) {
+            if (revenueChart) {
+                revenueChart.data = getRevenueData(period);
+                revenueChart.update();
+            }
+        }
+
+        // Update Distribution Chart based on selected type
+        function updateDistributionChart(type) {
+            if (distributionChart) {
+                distributionChart.data = getDistributionData(type);
+                distributionChart.update();
+            }
+        }
+
+        // Get data for Revenue Chart based on time period
+        function getRevenueData(period) {
+            // Simulated data
+            let labels, dataset1, dataset2;
+
+            if (period === 'weekly') {
+                labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+                dataset1 = [12500, 17800, 14600, 19200];
+                dataset2 = [10200, 15400, 12800, 16900];
+            } else if (period === 'quarterly') {
+                labels = ['Q1', 'Q2', 'Q3', 'Q4'];
+                dataset1 = [145000, 162000, 178000, 192000];
+                dataset2 = [132000, 148000, 156000, 172000];
+            } else { // monthly (default)
+                labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                dataset1 = [42000, 38000, 45000, 50000, 52000, 48000, 55000, 57000, 60000, 58000, 64000, 68000];
+                dataset2 = [38000, 34000, 41000, 45000, 48000, 44000, 51000, 53000, 56000, 54000, 59000, 63000];
+            }
+
+            return {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'This Year',
+                        data: dataset1,
+                        borderColor: '#4A6FFF',
+                        backgroundColor: 'rgba(74, 111, 255, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Last Year',
+                        data: dataset2,
+                        borderColor: '#A3B9FF',
+                        backgroundColor: 'rgba(163, 185, 255, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }
+                ]
+            };
+        }
+
+        // Get data for Distribution Chart based on type
+        function getDistributionData(type) {
+            // Simulated data
+            if (type === 'department') {
+                return {
+                    labels: ['Marketing', 'Sales', 'Operations', 'R&D', 'Admin'],
+                    datasets: [{
+                        data: [35000, 65000, 42000, 28000, 18000],
+                        backgroundColor: ['#4A6FFF', '#53D8FB', '#A3B9FF', '#FF8484', '#FFDA83'],
+                        borderWidth: 0
+                    }]
+                };
+            } else if (type === 'project') {
+                return {
+                    labels: ['Website Redesign', 'Mobile App', 'CRM Implementation', 'Marketing Campaign', 'Other'],
+                    datasets: [{
+                        data: [42000, 38000, 58000, 25000, 15000],
+                        backgroundColor: ['#4A6FFF', '#53D8FB', '#A3B9FF', '#FF8484', '#FFDA83'],
+                        borderWidth: 0
+                    }]
+                };
+            } else { // status (default)
+                return {
+                    labels: ['Completed', 'In Progress', 'Planned', 'On Hold', 'Cancelled'],
+                    datasets: [{
+                        data: [85000, 45000, 32000, 18000, 8000],
+                        backgroundColor: ['#4A6FFF', '#53D8FB', '#A3B9FF', '#FF8484', '#FFDA83'],
+                        borderWidth: 0
+                    }]
+                };
+            }
+        }
+
+        function updateSummaryData() {
+            // Simulate new data
+            const totalSpend = Math.floor(Math.random() * 50000) + 150000;
+            const totalTransactions = Math.floor(Math.random() * 200) + 800;
+            const avgTransactionValue = Math.floor(totalSpend / totalTransactions);
+            const pendingApprovals = Math.floor(Math.random() * 10) + 5;
+
+            document.getElementById('total-spend').textContent = '$' + totalSpend.toLocaleString();
+            document.getElementById('total-transactions').textContent = totalTransactions.toLocaleString();
+            document.getElementById('avg-transaction').textContent = '$' + avgTransactionValue.toLocaleString();
+            document.getElementById('pending-approvals').textContent = pendingApprovals;
+
+            const spendTrend = document.getElementById('spend-trend');
+            if (totalSpend > 180000) {
+                spendTrend.textContent = '↑ 12.4%';
+                spendTrend.className = 'trend trend-up';
+            } else {
+                spendTrend.textContent = '↓ 3.8%';
+                spendTrend.className = 'trend trend-down';
+            }
+
+            const transTrend = document.getElementById('transactions-trend');
+            if (totalTransactions > 900) {
+                transTrend.textContent = '↑ 8.2%';
+                transTrend.className = 'trend trend-up';
+            } else {
+                transTrend.textContent = '↓ 2.1%';
+                transTrend.className = 'trend trend-down';
+            }
+        }
+
+        function simulateTableDataChange() {
+            const tableBody = document.querySelector('.transactions-table tbody');
+            if (!tableBody) return;
+
+            tableBody.innerHTML = '';
+
+            const departments = ['Marketing', 'Sales', 'Operations', 'R&D', 'Admin'];
+            const statuses = ['Approved', 'Pending', 'Rejected'];
+            const statusClasses = {
+                'Approved': 'status-approved',
+                'Pending': 'status-pending',
+                'Rejected': 'status-rejected'
+            };
+
+            for (let i = 0; i < 10; i++) {
+                const tr = document.createElement('tr');
+
+                const date = new Date();
+                date.setDate(date.getDate() - Math.floor(Math.random() * 30));
+                const dateString = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                const amount = Math.floor(Math.random() * 5000) + 500;
+                const dept = departments[Math.floor(Math.random() * departments.length)];
+                const status = statuses[Math.floor(Math.random() * statuses.length)];
+
+                tr.innerHTML = `
+                <td>${dateString}</td>
+                <td>TRX-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</td>
+                <td>${dept}</td>
+                <td>$${amount.toLocaleString()}</td>
+                <td><span class="status-badge ${statusClasses[status]}">${status}</span></td>
+                <td>
+                    <button class="action-btn">
+                        <span class="material-icons">more_vert</span>
+                    </button>
+                </td>
+            `;
+
+                tableBody.appendChild(tr);
+            }
+
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    alert('Transaction actions would be shown here!');
+                });
+            });
+        }
+
+        updateSummaryData();
+        simulateTableDataChange();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* Modern Profile Section Styling */
+.content-section#profile-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.15);
+    padding: 24px;
+    margin-bottom: 32px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.profile-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f2f5;
+    margin-bottom: 24px;
+}
+
+.profile-section-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+#profile-section-add-admin-btn {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#profile-section-add-admin-btn:hover {
+    background-color: #4338ca;
+}
+
+#profile-section-add-admin-btn i {
+    font-size: 0.875rem;
+}
+
+.profile-section-counts {
+    display: flex;
+    gap: 32px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+}
+
+.profile-section-counts p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+
+.profile-section-counts strong {
+    font-weight: 600;
+    color: #111827;
+}
+
+.profile-section-counts span {
+    color: #111827;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.profile-section-table-container {
+    margin-top: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #f0f2f5;
+}
+
+#profile-section-user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+#profile-section-user-table thead {
+    background-color: #f9fafb;
+}
+
+#profile-section-user-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#profile-section-user-table tbody tr {
+    border-top: 1px solid #f0f2f5;
+    transition: background-color 0.2s ease;
+}
+
+#profile-section-user-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+#profile-section-user-table td {
+    padding: 14px 16px;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+#profile-section-user-table td:last-child {
+    display: flex;
+    gap: 8px;
+}
+
+/* Action buttons styling */
+.table-action-btn {
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.edit-btn {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.edit-btn:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+.delete-btn {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.delete-btn:hover {
+    background-color: #fecaca;
+    color: #dc2626;
+}
+
+/* Role badges */
+.role-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.role-admin {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+
+.role-customer {
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+/* Empty state styling */
+.empty-table-message {
+    padding: 32px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+}

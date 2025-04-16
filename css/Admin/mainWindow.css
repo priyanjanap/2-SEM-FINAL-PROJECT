@@ -1,0 +1,442 @@
+/* ===== GLOBAL STYLES ===== */
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #5a73f3;
+    --primary-dark: #3252e0;
+    --secondary-color: #3f37c9;
+    --success-color: #4cc9a4;
+    --danger-color: #f25767;
+    --warning-color: #fca311;
+    --info-color: #4895ef;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #64748b;
+    --gray-light: #94a3b8;
+    --gray-dark: #475569;
+    --border-color: #e2e8f0;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark-color);
+    background-color: #f1f5f9;
+}
+
+/* ===== SIDEBAR STYLES ===== */
+#sidebar {
+    height: 100vh;
+    position: fixed;
+    padding: 0;
+    background-color: var(--dark-color);
+    color: white;
+    transition: all 0.3s;
+    box-shadow: var(--box-shadow);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#sidebar .sidebar-header {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1rem;
+}
+
+#sidebar .logo {
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#sidebar .logo span {
+    color: var(--primary-color);
+}
+
+.menu-category {
+    color: var(--gray-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1.25rem 1.5rem 0.5rem;
+}
+
+#sidebar .nav-item {
+    margin-bottom: 0.25rem;
+}
+
+#sidebar .nav-link {
+    color: var(--gray-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+#sidebar .nav-link i {
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+#sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#sidebar .nav-link.active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+/* ===== CONTENT SECTION ===== */
+.content-section {
+    margin-left: 16.66%;
+    padding: 1.5rem;
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Header styles */
+.header-actions {
+    display: flex;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-color);
+}
+
+.search-bar input {
+    padding-left: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--light-color);
+}
+
+.notification-bell {
+    position: relative;
+    font-size: 1.25rem;
+    color: var(--gray-color);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.user-info {
+    margin-left: 0.75rem;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-role {
+    color: var(--gray-color);
+    font-size: 0.8rem;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Stat card styles */
+.stat-card {
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.stat-icon.blue {
+    color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.stat-icon.purple {
+    color: var(--secondary-color);
+    background-color: rgba(63, 55, 201, 0.1);
+}
+
+.stat-icon.green {
+    color: var(--success-color);
+    background-color: rgba(76, 201, 164, 0.1);
+}
+
+.stat-icon.orange {
+    color: var(--warning-color);
+    background-color: rgba(252, 163, 17, 0.1);
+}
+
+.stat-title {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-trend {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.stat-trend.up {
+    color: var(--success-color);
+}
+
+.stat-trend.down {
+    color: var(--danger-color);
+}
+
+/* Quick actions */
+.actions-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.action-card {
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--light-color);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.action-card:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.action-card:hover .action-icon {
+    color: white;
+}
+
+.action-name {
+    font-weight: 500;
+}
+
+/* Table styles */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.table thead th {
+    border-bottom: 2px solid var(--border-color);
+    color: var(--gray-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.applications-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.applications-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: rgba(252, 163, 17, 0.1);
+    color: var(--warning-color);
+}
+
+.status-approved {
+    background-color: rgba(76, 201, 164, 0.1);
+    color: var(--success-color);
+}
+
+.status-rejected {
+    background-color: rgba(242, 87, 103, 0.1);
+    color: var(--danger-color);
+}
+
+.action-btn {
+    border: none;
+    background-color: var(--primary-light);
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.view-all {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Transaction styles */
+.transaction-item {
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+}
+
+.transaction-item:hover {
+    background-color: var(--light-color);
+}
+
+.transaction-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.icon-payment {
+    color: var(--success-color);
+    background-color: rgba(76, 201, 164, 0.1);
+}
+
+.icon-disburse {
+    color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.icon-penalty {
+    color: var(--warning-color);
+    background-color: rgba(252, 163, 17, 0.1);
+}
+
+.transaction-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.transaction-date {
+    color: var(--gray-color);
+    font-size: 0.85rem;
+}
+
+.transaction-amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.amount-positive {
+    color: var(--success-color);
+}
+
+.amount-negative {
+    color: var(--danger-color);
+}
+

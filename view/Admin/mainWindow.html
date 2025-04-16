@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NexoLend - Loan Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="../../css/Admin/mainWindow.css" rel="stylesheet">
+    <link href="../../css/Admin/loan-section.css" rel="stylesheet">
+    <link href="../../css/Admin/payment-section.css" rel="stylesheet">
+    <link href="../../css/Admin/customer-section.css" rel="stylesheet">
+    <link href="../../css/Admin/profileAdmin.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse" id="sidebar">
+            <div class="position-sticky">
+                <div class="sidebar-header p-3 border-bottom">
+                    <h3 class="logo">Nexo<span>Lend</span></h3>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="menu-category">Main</li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard-section">
+                            <i class="fas fa-tachometer-alt me-2"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loan-section">
+                            <i class="fas fa-money-bill-wave me-2"></i>
+                            <span>Loans</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#customer-section">
+                            <i class="fas fa-users me-2"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#document-section">
+                            <i class="fas fa-users me-2"></i>
+                            <span>Document</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#payment-section">
+                            <i class="fas fa-credit-card me-2"></i>
+                            <span>Payments</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-category">Management</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-clipboard-list me-2"></i>
+                            <span>Loan Products</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-chart-line me-2"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile-section">
+                            <i class="fas fa-file-invoice-dollar me-2"></i>
+                            <span>Profile & Edit</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-cog me-2"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logoutLink">
+                            <img src="../../asset/img.png" alt="Log Out" style="width: 20px; height: 20px;" >
+                              Log Out
+
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Main Content -->
+
+        <main>
+            <!--section dashboard-->
+            <section class="content-section" id="dashboard-section">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="header-actions d-flex align-items-center">
+                        <div class="search-bar me-3 position-relative">
+                            <i class="fas fa-search position-absolute search-icon"></i>
+                            <input class="form-control" placeholder="Search..." type="text">
+                        </div>
+                        <div class="notification-bell position-relative me-3">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="user-profile d-flex align-items-center">
+                            <div class="avatar me-2">JD</div>
+                            <div class="user-info d-none d-sm-block">
+                                <div class="user-name">John Doe</div>
+                                <div class="user-role">Loan Manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row stat-cards mb-4">
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="stat-title">Total Loans</div>
+                                    <div class="stat-icon blue">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-value">$1.27M</div>
+                                <div class="stat-trend up">
+                                    <i class="fas fa-arrow-up"></i>
+                                    12.5% from last month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="stat-title">Active Loans</div>
+                                    <div class="stat-icon purple">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-value">287</div>
+                                <div class="stat-trend up">
+                                    <i class="fas fa-arrow-up"></i>
+                                    8.3% from last month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="stat-title">Revenue</div>
+                                    <div class="stat-icon green">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-value">$95.4K</div>
+                                <div class="stat-trend up">
+                                    <i class="fas fa-arrow-up"></i>
+                                    5.1% from last month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <div class="card stat-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <div class="stat-title">Late Payments</div>
+                                    <div class="stat-icon orange">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-value">24</div>
+                                <div class="stat-trend down">
+                                    <i class="fas fa-arrow-down"></i>
+                                    3.7% from last month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row actions-grid">
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="action-card text-center">
+                                    <div class="action-icon mb-2">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div class="action-name">New Loan</div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="action-card text-center">
+                                    <div class="action-icon mb-2">
+                                        <i class="fas fa-hand-holding-usd"></i>
+                                    </div>
+                                    <div class="action-name">Record Payment</div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="action-card text-center">
+                                    <div class="action-icon mb-2">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="action-name">Add Customer</div>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="action-card text-center">
+                                    <div class="action-icon mb-2">
+                                        <i class="fas fa-file-export"></i>
+                                    </div>
+                                    <div class="action-name">Export Report</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loan Performance Chart -->
+                <div class="card mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Loan Performance</h5>
+                        <div class="view-all">Last 6 Months</div>
+                    </div>
+                    <div class="card-body">
+                        <canvas height="250" id="loanPerformanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Loan Applications and Recent Transactions -->
+                <div class="row mb-4">
+                    <!-- Loan Applications -->
+                    <div class="col-md-12 col-lg-6 mb-4 mb-lg-0">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Recent Loan Applications</h5>
+                                <a class="view-all" href="#">View All</a>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table applications-table mb-0">
+                                        <thead>
+                                        <tr>
+                                            <th>Customer</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Sarah Johnson</td>
+                                            <td>$25,000</td>
+                                            <td>Mar 12, 2025</td>
+                                            <td><span class="badge status-pending">Pending</span></td>
+                                            <td>
+                                                <button class="btn btn-sm action-btn view-btn">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Michael Brown</td>
+                                            <td>$15,000</td>
+                                            <td>Mar 11, 2025</td>
+                                            <td><span class="badge status-approved">Approved</span></td>
+                                            <td>
+                                                <button class="btn btn-sm action-btn view-btn">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>James Wilson</td>
+                                            <td>$35,000</td>
+                                            <td>Mar 10, 2025</td>
+                                            <td><span class="badge status-rejected">Rejected</span></td>
+                                            <td>
+                                                <button class="btn btn-sm action-btn view-btn">View</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Emily Davis</td>
+                                            <td>$22,000</td>
+                                            <td>Mar 09, 2025</td>
+                                            <td><span class="badge status-approved">Approved</span></td>
+                                            <td>
+                                                <button class="btn btn-sm action-btn view-btn">View</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Transactions -->
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card h-100">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Recent Transactions</h5>
+                                <a class="view-all" href="#">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="transaction-list">
+                                    <div class="transaction-item d-flex align-items-center mb-3">
+                                        <div class="transaction-icon icon-payment me-3">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <div class="transaction-info flex-grow-1">
+                                            <div class="transaction-title">Payment Received</div>
+                                            <div class="transaction-date">David Clark - Mar 13, 2025</div>
+                                        </div>
+                                        <div class="transaction-amount amount-positive">+$1,250</div>
+                                    </div>
+
+                                    <div class="transaction-item d-flex align-items-center mb-3">
+                                        <div class="transaction-icon icon-disburse me-3">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </div>
+                                        <div class="transaction-info flex-grow-1">
+                                            <div class="transaction-title">Loan Disbursement</div>
+                                            <div class="transaction-date">Michael Brown - Mar 12, 2025</div>
+                                        </div>
+                                        <div class="transaction-amount amount-negative">-$15,000</div>
+                                    </div>
+
+                                    <div class="transaction-item d-flex align-items-center mb-3">
+                                        <div class="transaction-icon icon-payment me-3">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <div class="transaction-info flex-grow-1">
+                                            <div class="transaction-title">Payment Received</div>
+                                            <div class="transaction-date">Sarah Johnson - Mar 11, 2025</div>
+                                        </div>
+                                        <div class="transaction-amount amount-positive">+$875</div>
+                                    </div>
+
+                                    <div class="transaction-item d-flex align-items-center mb-3">
+                                        <div class="transaction-icon icon-penalty me-3">
+                                            <i class="fas fa-exclamation"></i>
+                                        </div>
+                                        <div class="transaction-info flex-grow-1">
+                                            <div class="transaction-title">Late Fee Applied</div>
+                                            <div class="transaction-date">Alex Thompson - Mar 10, 2025</div>
+                                        </div>
+                                        <div class="transaction-amount amount-positive">+$95</div>
+                                    </div>
+
+                                    <div class="transaction-item d-flex align-items-center">
+                                        <div class="transaction-icon icon-payment me-3">
+                                            <i class="fas fa-arrow-down"></i>
+                                        </div>
+                                        <div class="transaction-info flex-grow-1">
+                                            <div class="transaction-title">Payment Received</div>
+                                            <div class="transaction-date">Emily Davis - Mar 09, 2025</div>
+                                        </div>
+                                        <div class="transaction-amount amount-positive">+$1,100</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--section-Loan-->
+            <section class="content-section" id="loan-section">
+                <div class="loan-management-container">
+                    <!-- Admin Section -->
+                    <section class="user-panel admin-panel">
+                        <h2 class="panel-title">Admin Dashboard</h2>
+                        <div class="panel-content">
+                            <div class="action-buttons">
+                                <button class="btn primary-btn" id="admin-loan-actionButton1">Approve/Reject
+                                    Loans
+                                </button>
+                                <button class="btn secondary-btn" id="admin-loan-actionButton2">View All Loans
+                                </button>
+                                <button class="btn info-btn" id="admin-loan-actionButton3">Generate Reports
+                                </button>
+                            </div>
+
+                            <!-- Admin Table -->
+                            <div class="table-container">
+                                <h3>Recent Loan Applications</h3>
+                                <table class="data-table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+
+                                    </tr>
+                                    <tr>
+
+                                    </tr>
+                                    <tr>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Popups -->
+                    <!-- Admin Popups -->
+                    <div class="popup" id="approveRejectPopup">
+                        <div class="popup-content">
+                            <span class="close-btn" id="close-btn-admin" onclick="closePopup('approveRejectPopup')">&times;</span>
+                            <h2>Approve or Reject Loan</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label>Loan ID</label>
+                                    <input placeholder="Enter Loan ID" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>Decision</label>
+                                    <select>
+                                        <option>Select Decision</option>
+                                        <option>Approve</option>
+                                        <option>Reject</option>
+                                        <option>Request More Information</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Comments</label>
+                                    <textarea placeholder="Enter comments"></textarea>
+                                </div>
+                                <button class="btn primary-btn" type="button">Submit Decision</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="popup" id="viewLoansPopup">
+                        <div class="popup-content large">
+                            <span class="close-btn" onclick="closePopup('viewLoansPopup')">&times;</span>
+                            <h2>All Loans</h2>
+                            <div class="filter-bar">
+                                <input placeholder="Search by ID or Name" type="text">
+                                <select>
+                                    <option>All Statuses</option>
+                                    <option>Pending</option>
+                                    <option>Approved</option>
+                                    <option>Rejected</option>
+                                    <option>Active</option>
+                                    <option>Closed</option>
+                                </select>
+                                <button class="btn small-btn">Filter</button>
+                            </div>
+                            <div class="table-container scrollable">
+                                <table class="data-table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Date Applied</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup" id="reportsPopup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup('reportsPopup')">&times;</span>
+                            <h2>Generate Reports</h2>
+                            <div class="form-group">
+                                <label>Report Type</label>
+                                <select>
+                                    <option>Monthly Loan Approvals</option>
+                                    <option>Payment Collections</option>
+                                    <option>Overdue Payments</option>
+                                    <option>Customer Statistics</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date Range</label>
+                                <div class="date-range">
+                                    <input placeholder="Start Date" type="date">
+                                    <input placeholder="End Date" type="date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Format</label>
+                                <div class="format-options">
+                                    <label><input checked name="format" type="radio"> PDF</label>
+                                    <label><input name="format" type="radio"> Excel</label>
+                                    <label><input name="format" type="radio"> CSV</label>
+                                </div>
+                            </div>
+                            <button class="btn primary-btn">Generate</button>
+                        </div>
+                    </div>
+
+                    <!-- Customer Popups -->
+                    <div class="popup" id="applyLoanPopup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup('applyLoanPopup')">&times;</span>
+                            <h2>Apply for New Loan</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label>Loan Type</label>
+                                    <select>
+                                        <option>Select Loan Type</option>
+                                        <option>Personal Loan</option>
+                                        <option>Home Loan</option>
+                                        <option>Auto Loan</option>
+                                        <option>Education Loan</option>
+                                        <option>Business Loan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Amount Requested</label>
+                                    <input placeholder="Enter amount" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>Purpose</label>
+                                    <textarea placeholder="Briefly describe the purpose of this loan"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Desired Term (Months)</label>
+                                    <input placeholder="Enter term in months" type="number">
+                                </div>
+                                <button class="btn primary-btn" type="button">Submit Application</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="popup" id="checkStatusPopup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup('checkStatusPopup')">&times;</span>
+                            <h2>Loan Status</h2>
+                            <div class="form-group">
+                                <label>Loan ID</label>
+                                <input placeholder="Enter Loan ID" type="text">
+                                <button class="btn small-btn">Check</button>
+                            </div>
+                            <div class="status-result">
+                                <div class="status-item">
+                                    <span class="label">Loan ID:</span>
+                                    <span class="value">2001</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Status:</span>
+                                    <span class="value"><span class="status active">Active</span></span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Amount:</span>
+                                    <span class="value">$10,000</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Next Payment:</span>
+                                    <span class="value">$350 due on 04/15/2025</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="label">Balance Remaining:</span>
+                                    <span class="value">$8,750</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="popup" id="makePaymentPopup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup('makePaymentPopup')">&times;</span>
+                            <h2>Make a Payment</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label>Select Loan</label>
+                                    <select>
+                                        <option>Personal Loan (#2001) - $350 due</option>
+                                        <option>Home Loan (#2002) - $1,250 due</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Amount</label>
+                                    <input type="text" value="$350">
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Method</label>
+                                    <select>
+                                        <option>Select Payment Method</option>
+                                        <option>Bank Account (ending in 4578)</option>
+                                        <option>Credit Card (ending in 3456)</option>
+                                        <option>Add New Payment Method</option>
+                                    </select>
+                                </div>
+                                <div class="payment-summary">
+                                    <div class="summary-item">
+                                        <span>Payment:</span>
+                                        <span>$350.00</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Processing Fee:</span>
+                                        <span>$0.00</span>
+                                    </div>
+                                    <div class="summary-item total">
+                                        <span>Total:</span>
+                                        <span>$350.00</span>
+                                    </div>
+                                </div>
+                                <button class="btn primary-btn" type="button">Make Payment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content-section" id="document-section"></section>
+            <section class="content-section" id="customer-section">
+                <!-- Customer Cards Summary -->
+                <div class="customer-cards">
+                    <div class="card">
+                        <div class="card-header">Total Customers</div>
+                        <div class="card-body">125</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">Active Accounts</div>
+                        <div class="card-body">98</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">New This Month</div>
+                        <div class="card-body">12</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">Premium Accounts</div>
+                        <div class="card-body">45</div>
+                    </div>
+                </div>
+
+                <!-- Customer Table with Inline Filter -->
+                <div class="table-container">
+                    <table class="customer-table">
+                        <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>NCC</th>
+                            <th>
+                                Account Type
+                                <select id="accountTypeFilter" class="table-filter">
+                                    <option value="all">All</option>
+                                    <option value="savings">Savings</option>
+                                    <option value="checking">Checking</option>
+                                    <option value="business">Business</option>
+                                    <option value="premium">Premium</option>
+                                </select>
+                            </th>
+                            <th>Account Number</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="customerTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="content-section" id="payment-section">
+                <div class="admin-payment" id="admin-payment">
+                    <div class="search-filters">
+                        <input id="search-payment" placeholder="Search by Transaction ID / User" type="text">
+                        <select id="filter-status">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                        <input id="filter-date" type="date">
+                        <button onclick="applyFilters()">Filter</button>
+                    </div>
+                    <div class="payment-overview">
+                        <div class="card">Total Transactions: <span id="total-transactions">120</span></div>
+                        <div class="card">Pending Payments: <span id="pending-payments">5</span></div>
+                        <div class="card">Completed Payments: <span id="completed-payments">110</span></div>
+                        <div class="card">Failed Payments: <span id="failed-payments">5</span></div>
+                    </div>
+
+
+                    <table class="transactions-table">
+                        <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>John Doe</td>
+                            <td>$50</td>
+                            <td>Credit Card</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>2025-03-15</td>
+                            <td>
+                                <button class="btn refund">Refund</button>
+                                <button class="btn details">Details</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+            </section>
+            <section class="content-section" id="profile-section">
+                <div class="profile-section-header">
+                    <h2>Edit Profile</h2>
+                    <button id="profile-section-add-admin-btn" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i> Add Admin
+                    </button>
+                </div>
+
+                <div class="profile-section-counts" style="margin-top: 20px;">
+                    <p><strong>Total Admins:</strong> <span id="profile-section-admin-count">0</span></p>
+                    <p><strong>Total Customers:</strong> <span id="profile-section-customer-count">0</span></p>
+                </div>
+
+                <div class="profile-section-table-container" style="margin-top: 30px;">
+                    <table class="table table-striped" id="profile-section-user-table">
+                        <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody id="profile-section-user-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.4/dist/sweetalert2.all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../../js/MainWindow.js"></script>
+<script type="module" src="../../controller/customerController.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const defaultSection = document.getElementById('dashboard-section');
+        if (defaultSection) {
+            defaultSection.style.display = 'block';
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                document.getElementById(targetId).style.display = 'block';
+
+                document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+
+                this.classList.add('active');
+            });
+        });
+    });
+
+    function popUp() {
+        const AdminButton1 = document.getElementById('admin-loan-actionButton1');
+        const AdminButton2 = document.getElementById('admin-loan-actionButton2');
+        const AdminButton3 = document.getElementById('admin-loan-actionButton3');
+
+        const AdminPopUp1 = document.getElementById('approveRejectPopup');
+        const AdminPopUp2 = document.getElementById('viewLoansPopup');
+        const AdminPopUp3 = document.getElementById('reportsPopup');
+
+        const  closeBtn1=document.getElementById('close-btn-admin');
+
+
+        function openPopup(popup) {
+            popup.style.display = "block";
+        }
+
+        function closePopup(popup) {
+            popup.style.display = "none";
+        }
+
+        AdminButton1.addEventListener('click', function (e) {
+            e.preventDefault();
+            openPopup(AdminPopUp1);
+        });
+
+        AdminButton2.addEventListener('click', function (e) {
+            e.preventDefault();
+            openPopup(AdminPopUp2);
+        });
+
+        AdminButton3.addEventListener('click', function (e) {
+            e.preventDefault();
+            openPopup(AdminPopUp3);
+        });
+        closeBtn1.addEventListener('click',function (e){
+            e.preventDefault();
+            closePopup(AdminPopUp1)
+        })
+
+
+        document.querySelectorAll('.popup .close-btn').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function () {
+                const popup = this.closest('.popup');
+                closePopup(popup);
+            });
+        });
+    }
+// log out
+    document.getElementById("logoutLink").addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // ===== STYLE BLOCK (CSS) =====
+        const style = document.createElement('style');
+        style.textContent = `
+        .logout-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-in-out;
+            z-index: 9999;
+        }
+
+        .logout-modal {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: scaleIn 0.3s ease-in-out;
+            max-width: 360px;
+            width: 90%;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .logout-modal p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .logout-btn.yes {
+            background-color: #007bff;
+            color: white;
+            margin-right: 12px;
+        }
+
+        .logout-btn.yes:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn.cancel {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .logout-btn.cancel:hover {
+            background-color: #cfcfcf;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    `;
+        document.head.appendChild(style);
+
+        const overlay = document.createElement("div");
+        overlay.className = "logout-overlay";
+
+        const modal = document.createElement("div");
+        modal.className = "logout-modal";
+
+        const message = document.createElement("p");
+        message.textContent = "Are you sure you want to log out?";
+
+        const yesBtn = document.createElement("button");
+        yesBtn.className = "logout-btn yes";
+        yesBtn.textContent = "Yes";
+
+        const cancelBtn = document.createElement("button");
+        cancelBtn.className = "logout-btn cancel";
+        cancelBtn.textContent = "Cancel";
+
+        modal.appendChild(message);
+        modal.appendChild(yesBtn);
+        modal.appendChild(cancelBtn);
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "../../view/index.html";
+        });
+
+        cancelBtn.addEventListener("click", () => {
+            overlay.remove();
+        });
+    });
+
+
+</script>
+
+
+</body>
+</html>
